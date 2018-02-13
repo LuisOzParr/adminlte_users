@@ -20,10 +20,6 @@ Route::group(['middleware' => ['web']], function() {
 
 
     Route::group(['prefix' => 'admin', 'middleware' => ['auth'] ], function() {
-        Route::get('/', function () {
-            return view('admin_templeta::templetas.admin.index');
-        });
-
         //-----------------------ADMIN USERS-----------------------
         Route::resource('adminUsuarios', 'Ozparr\AdminLogin\Controllers\UsersController', ['except' => [
             'store', 'show'
