@@ -80,7 +80,9 @@ protected $fillable = [
 ];
 ```
 
-Ejecutar en consola ```php artisan migrate``` para crear las migraciones
+Ejecutamos las migraciones:
+
+```php artisan migrate```
 
 A continuacion ejecutamos los seeds para crear un usuario root 
 
@@ -92,6 +94,12 @@ Crea un link simbólico de ```stograge\public``` a la carpeta ```\public```, par
 
 ```
 php artisan storage:link
+```
+
+Por ultimo publicamos los assets en la carpeta publica: 
+
+```
+php artisan vendor:publish
 ```
 
 
