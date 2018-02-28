@@ -17,8 +17,15 @@ class UpdateTableUsers extends Migration
             $table->string('img')->nullable();
             $table->unsignedInteger('rol_id');
 
-            $table->foreign('rol_id')->references('id')->on('roles')->onUpdate('cascade')->onDelete('restrict');
+            $table->foreign('rol_id')->references('id')->on('roles')->onUpdate('cascade')->onDelete('cascade');
         });
+    }
+    public function down()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['rol_id']);
+        });
+
     }
 
 }

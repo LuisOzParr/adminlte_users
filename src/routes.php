@@ -1,6 +1,10 @@
 <?php
 
 Route::group(['middleware' => ['web']], function() {
+    Route::get('/home', function (){
+       return  redirect()->route('admin.index');
+    });
+
     Route::post('login', [
         'uses' => 'Ozparr\AdminLogin\Controllers\Auth\LoginController@login',
     ]);

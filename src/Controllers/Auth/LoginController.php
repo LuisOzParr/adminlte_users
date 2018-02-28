@@ -25,6 +25,7 @@ class LoginController extends Controller
         return view('admin_login::auth.login');
     }
 
+
     /**
      * Where to redirect users after login.
      *
