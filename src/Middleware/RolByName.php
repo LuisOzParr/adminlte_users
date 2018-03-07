@@ -2,8 +2,10 @@
 
 namespace Ozparr\AdminLogin\Middleware;
 
+use App\Rol;
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use function PHPSTORM_META\type;
 
 class RolByName
 {
@@ -16,8 +18,14 @@ class RolByName
      */
     public function handle($request, Closure $next, $rol)
     {
-        $roles = explode(';',$rol);
-        if(Auth::user()->areRol($roles)){
+        try{
+            $rol = \Ozparr\AdminLogin\Models\Rol::where('nombre','=',$rol)->firstOrFail();
+        }
+        catch (\Exception $e){
+            abort(500);
+        }
+
+        if(Auth::user()->rol->nivel <= $rol->nivel ){
             return $next($request);
         }
         else
