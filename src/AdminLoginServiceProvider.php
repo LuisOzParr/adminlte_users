@@ -16,6 +16,9 @@ class AdminLoginServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__ . '/routes.php');
         $this->loadViewsFrom(__DIR__ . '/Views', 'admin_login');
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+        $this->publishes([
+            __DIR__.'/config/loginoz.php' => config_path('loginoz.php')
+        ], 'config');
 
     }
 

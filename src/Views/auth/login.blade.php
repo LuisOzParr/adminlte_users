@@ -29,13 +29,13 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background:{!! config('loginoz.background') !!}; background-image: url({!! config('loginoz.background-img')!!}); background-size: cover;">
 <div class="login-box">
     <div class="login-logo">
-        <a href=""><b>Admin</b>LTE</a>
+        <a href=""><b>{!! config('templeta.title') !!}</b></a>
     </div>
     <!-- /.login-logo -->
-    <div class="login-box-body">
+    <div class="login-box-body" style="background: {!! config('loginoz.background-login-body') !!}">
         <p class="login-box-msg">Iniciar sesión</p>
 
         <form action="{{ route('login') }}" method="post">
