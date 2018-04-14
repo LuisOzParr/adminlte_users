@@ -32,7 +32,8 @@
 <body class="hold-transition login-page" style="background:{!! config('loginoz.background') !!}; background-image: url({!! config('loginoz.background-img')!!}); background-size: cover;">
 <div class="login-box">
     <div class="login-logo">
-        <a href=""><b>{!! config('templeta.title') !!}</b></a>
+        <img src="{!! config('loginoz.tutulo-img') !!}">
+        <a href=""><b>@if(config('loginoz.titleOn')) {!! config('templeta.title') !!}@endif</b></a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body" style="background: {!! config('loginoz.background-login-body') !!}">

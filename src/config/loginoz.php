@@ -16,6 +16,12 @@ return [
 
     'background' => '#d2d6de',
     'background-img' => '',
-    'background-login-body' => '#fff'
+    'background-login-body' => '#fff',
+
+    'titleOn' => true,
+    'tutulo-img'=>''
+
+
+
 
 ];
