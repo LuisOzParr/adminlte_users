@@ -122,7 +122,6 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //Todo Eliminar images del usuario
         $actualUserId = Auth::user()->id;
         $user = User::find($id);
 
@@ -130,10 +129,11 @@ class UsersController extends Controller
             flash('No puedes eliminarte a ti mismo')->warning();
             return redirect()->route('adminUsuarios.index');
         }
-        if(Auth::user()->nivel < $user->rol->nivel ){
+        if(Auth::user()->rol->nivel > $user->rol->nivel ){
             flash('Nesesitas tener un rango mas alto para eliminar este usuario')->warning();
             return redirect()->route('adminUsuarios.index');
         }
+
 
         $user->delete();
         flash('El usuario '.$user->name.' fue eliminado correctamente')->error();
