@@ -19,9 +19,17 @@ return [
     'background-login-body' => '#fff',
 
     'titleOn' => true,
-    'tutulo-img'=>''
+    'tutulo-img'=>'',
 
-
+    /*
+   |--------------------------------------------------------------------------
+   | Redireccionar una ves logeado
+   |--------------------------------------------------------------------------
+   |
+   | La ruta a la que se redireccionara cunando un usuario es autenticado
+   |
+   */
+    'loginRedirec'=>'admin/example'
 
 
 ];

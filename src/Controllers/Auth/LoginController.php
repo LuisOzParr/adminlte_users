@@ -31,7 +31,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
+    protected $redirectTo;
 
     /**
      * Create a new controller instance.
@@ -40,6 +40,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        $this->redirectTo = config('loginoz.loginRedirec');
         $this->middleware('guest')->except('logout');
     }
 }

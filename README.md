@@ -94,4 +94,10 @@ Crea un link simbólico de ```stograge\public``` a la carpeta ```\public```, par
 php artisan storage:link
 ```
 
+Sustituir la sigiente linea de codigo del Middeleware que se encuentra en ```app\app\Http\Middleware\RedirectIfAuthenticated.php```
 
+    return redirect('\home');
+
+por esta
+
+    return redirect(config('loginoz.loginRedirec'));
