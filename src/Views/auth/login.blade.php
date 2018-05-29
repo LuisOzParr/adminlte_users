@@ -29,7 +29,7 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition login-page" style="background:{!! config('loginoz.background') !!}; background-image: url({!! config('loginoz.background-img')!!}); background-size: cover;">
+<body class="hold-transition login-page" style="background:{!! config('loginoz.background') !!}; background-image: url({!! url(config('loginoz.background-img')) !!}); background-size: cover;">
 <div class="login-box">
     <div class="login-logo">
         <img src="{!! url(config('loginoz.tutulo-img')) !!}">
