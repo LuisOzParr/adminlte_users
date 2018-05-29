@@ -4,6 +4,7 @@ namespace Ozparr\AdminLogin\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Request;
 
 class LoginController extends Controller
 {
@@ -25,6 +26,16 @@ class LoginController extends Controller
         return view('admin_login::auth.login');
     }
 
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return redirect($this->redirectLogout);
+    }
+
+
 
     /**
      * Where to redirect users after login.
@@ -32,15 +43,19 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo;
+    protected $redirectLogout;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+
     public function __construct()
     {
         $this->redirectTo = config('loginoz.loginRedirec');
+        $this->redirectLogout = config('loginoz.loginRedirecLogout');
+
         $this->middleware('guest')->except('logout');
     }
 }

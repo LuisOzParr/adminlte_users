@@ -29,7 +29,7 @@ return [
    | La ruta a la que se redireccionara cunando un usuario es autenticado
    |
    */
-    'loginRedirec'=>'admin/example'
+    'loginRedirec'=>'admin/example',
 
-
+    'loginRedirecLogout'=>'/login'
 ];
