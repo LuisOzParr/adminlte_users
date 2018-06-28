@@ -19,7 +19,9 @@ class AdminLoginServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/config/loginoz.php' => config_path('loginoz.php')
         ], 'config');
-
+        $this->publishes([
+            __DIR__.'/Views/templeta/menu/users/' => config_path('loginoz.php')
+        ]);
     }
 
     /**
