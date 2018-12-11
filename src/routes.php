@@ -6,16 +6,16 @@ Route::group(['middleware' => ['web']], function() {
     });*/
 
     Route::post('login', [
-        'uses' => 'Ozparr\AdminLogin\Controllers\Auth\LoginController@login',
+        'uses' => 'Ozparr\AdminlteUsers\Controllers\Auth\LoginController@login',
     ]);
 
     Route::get('login', [
-        'uses' => 'Ozparr\AdminLogin\Controllers\Auth\LoginController@showLoginForm',
+        'uses' => 'Ozparr\AdminlteUsers\Controllers\Auth\LoginController@showLoginForm',
         'as' => 'login',
     ]);
 
     Route::post('logout', [
-        'uses' => 'Ozparr\AdminLogin\Controllers\Auth\LoginController@logout',
+        'uses' => 'Ozparr\AdminlteUsers\Controllers\Auth\LoginController@logout',
         'as' => 'logout'
     ]);
 
@@ -25,32 +25,32 @@ Route::group(['middleware' => ['web']], function() {
 
     Route::group(['prefix' => 'admin', 'middleware' => ['auth'] ], function() {
         //-----------------------ADMIN USERS-----------------------
-        Route::resource('adminUsuarios', 'Ozparr\AdminLogin\Controllers\UsersController', ['except' => [
+        Route::resource('adminUsuarios', 'Ozparr\AdminlteUsers\Controllers\UsersController', ['except' => [
             'store', 'show'
         ]]);
 
         Route::get('adminUsuarios/{id}/editPass', [
-            'uses' => 'Ozparr\AdminLogin\Controllers\UsersController@editPass',
+            'uses' => 'Ozparr\AdminlteUsers\Controllers\UsersController@editPass',
             'as' => 'adminUsuarios.editPass'
         ]);
 
         Route::put('adminUsuarios/{id}/updatePass', [
-            'uses' => 'Ozparr\AdminLogin\Controllers\UsersController@updatePass',
+            'uses' => 'Ozparr\AdminlteUsers\Controllers\UsersController@updatePass',
             'as' => 'adminUsuarios.updatePass'
         ]);
 
         Route::get('adminUsuarios/{id}/destroy', [
-            'uses' => 'Ozparr\AdminLogin\Controllers\UsersController@destroy',
+            'uses' => 'Ozparr\AdminlteUsers\Controllers\UsersController@destroy',
             'as' => 'adminUsuarios.destroy'
         ]);
 
         //-----------------------Roles-----------------------
-        Route::resource('roles', 'Ozparr\AdminLogin\Controllers\RolesController', ['except' => [
+        Route::resource('roles', 'Ozparr\AdminlteUsers\Controllers\RolesController', ['except' => [
             'index', 'show'
         ]]);
 
         Route::get('roles/{id}/destroy', [
-            'uses' => 'Ozparr\AdminLogin\Controllers\RolesController@destroy',
+            'uses' => 'Ozparr\AdminlteUsers\Controllers\RolesController@destroy',
             'as' => 'roles.destroy'
         ]);
 
@@ -58,12 +58,12 @@ Route::group(['middleware' => ['web']], function() {
 
         //----------------------REGISTES------------------------------
         Route::get('register', [
-            'uses' => 'Ozparr\AdminLogin\Controllers\Auth\RegisterController@showRegistrationForm',
+            'uses' => 'Ozparr\AdminlteUsers\Controllers\Auth\RegisterController@showRegistrationForm',
             'as' => 'register'
         ]);
 
         Route::post('register', [
-            'uses' => 'Ozparr\AdminLogin\Controllers\Auth\RegisterController@register',
+            'uses' => 'Ozparr\AdminlteUsers\Controllers\Auth\RegisterController@register',
             'as' => 'register'
         ]);
 

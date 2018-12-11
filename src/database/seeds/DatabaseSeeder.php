@@ -1,5 +1,5 @@
 <?php
-namespace Ozparr\AdminLogin\DataBase\Seeds;
+namespace Ozparr\AdminlteUsers\DataBase\Seeds;
 
 
 use Illuminate\Database\Seeder;

@@ -1,13 +1,13 @@
 <?php
 
-namespace Ozparr\AdminLogin\Controllers;
+namespace Ozparr\AdminlteUsers\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use Ozparr\AdminLogin\Models\Rol;
+use Ozparr\AdminlteUsers\Models\Rol;
 
 class UsersController extends Controller
 {
@@ -26,7 +26,7 @@ class UsersController extends Controller
     {
         $usuarios = User::all();
         $roles = Rol::all();
-        return view('admin_login::adminUsers.index', compact('usuarios','roles'));
+        return view('adminlte_users::adminUsers.index', compact('usuarios','roles'));
     }
 
     /**
@@ -37,7 +37,7 @@ class UsersController extends Controller
     public function create()
     {
         $roles = Rol::all();
-        return view('admin_login::adminUsers.new',compact('roles'));
+        return view('adminlte_users::adminUsers.new',compact('roles'));
     }
 
     /**
@@ -50,7 +50,7 @@ class UsersController extends Controller
     {
         $user = User::find($id);
         $roles = Rol::all();
-        return view('admin_login::adminUsers.editar', compact('user','roles') );
+        return view('adminlte_users::adminUsers.editar', compact('user','roles') );
     }
 
     /**
@@ -143,6 +143,6 @@ class UsersController extends Controller
 
     public function editPass($id){
         $user = User::find($id);
-        return view('admin_login::adminUsers.updatePass', compact('user') );
+        return view('adminlte_users::adminUsers.updatePass', compact('user') );
     }
 }

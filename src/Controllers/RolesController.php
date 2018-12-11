@@ -1,12 +1,12 @@
 <?php
 
-namespace Ozparr\AdminLogin\Controllers;
+namespace Ozparr\AdminlteUsers\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Ozparr\AdminLogin\Models\Rol;
+use Ozparr\AdminlteUsers\Models\Rol;
 
 
 class RolesController extends Controller
@@ -23,7 +23,7 @@ class RolesController extends Controller
      */
     public function create()
     {
-        return view('admin_login::adminRoles.new');
+        return view('adminlte_users::adminRoles.new');
     }
 
 
@@ -57,7 +57,7 @@ class RolesController extends Controller
     public function edit($id)
     {
         $rol = Rol::find($id);
-        return view('admin_login::adminRoles.editar', compact('rol') );
+        return view('adminlte_users::adminRoles.editar', compact('rol') );
     }
 
     /**

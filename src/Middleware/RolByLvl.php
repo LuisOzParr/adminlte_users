@@ -1,6 +1,6 @@
 <?php
 
-namespace Ozparr\AdminLogin\Middleware;
+namespace Ozparr\AdminlteUsers\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
