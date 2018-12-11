@@ -15,11 +15,9 @@ Agrega los nuevos provider en el array de ```providers``` que se encuentra en el
 ```
 'providers' => ['
     // ...
-    Ozparr\AdminTempleta\AdminTempletasServiceProvider::class,
-    Ozparr\AdminLogin\AdminLoginServiceProvider::class,
-    Collective\Html\HtmlServiceProvider::class,
+    Ozparr\AdminlteUsers\AdminLoginServiceProvider::class,
+    JeroenNoten\LaravelAdminLte\ServiceProvider::class,
     Laracasts\Flash\FlashServiceProvider::class,
-    Laravelista\Ekko\EkkoServiceProvider::class,
     // ...
   ],
 ```
@@ -27,10 +25,7 @@ A continuacion agrega los alias en el array ```aliases```
 ```
 'aliases' => [
     // ...
-    'Form' => Collective\Html\FormFacade::class,
-    'Html' => Collective\Html\HtmlFacade::class,
     'Flash'=> Laracasts\Flash\Flash::class,
-    'Ekko' => Laravelista\Ekko\Facades\Ekko::class,
     // ...
 ],
 ```
@@ -39,8 +34,8 @@ Ahora en el archivo ```app\http\Kernel.php``` agrega en el array ```routeMiddlew
 ```
  protected $routeMiddleware = [
      ...
-     'rolByLvl' => \Ozparr\AdminLogin\Middleware\RolByLvl::class,
-     'rolByName' => \Ozparr\AdminLogin\Middleware\RolByName::class
+     'rolByLvl' => \Ozparr\AdminlteUsers\Middleware\RolByLvl::class,
+     'rolByName' => \Ozparr\AdminlteUsers\Middleware\RolByName::class
      ...
  ]
 
@@ -50,7 +45,7 @@ A continuación agrega en el modelo ```User``` los siguientes métodos:
 
 ```
 public function rol(){
-    return $this->belongsTo('Ozparr\AdminLogin\Models\Rol');
+    return $this->belongsTo('Ozparr\AdminlteUsers\Models\Rol');
 }
 
 public function getImgAttribute($value)
@@ -85,7 +80,7 @@ Ejecutar en consola ```php artisan migrate``` para crear las migraciones
 A continuacion ejecutamos los seeds para crear un usuario root 
 
 ```
-php artisan db:seed --class="\Ozparr\AdminLogin\DataBase\Seeds\DatabaseSeeder"
+php artisan db:seed --class="\Ozparr\AdminlteUsers\DataBase\Seeds\DatabaseSeeder"
 ```
 
 Crea un link simbólico de ```stograge\public``` a la carpeta ```\public```, para poder guardar las imágenes de los usuarios:

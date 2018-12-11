@@ -1,6 +1,6 @@
 <?php
 
-namespace Ozparr\AdminLogin\Models;
+namespace Ozparr\AdminlteUsers\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

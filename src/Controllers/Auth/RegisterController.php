@@ -1,6 +1,6 @@
 <?php
 
-namespace Ozparr\AdminLogin\Controllers\Auth;
+namespace Ozparr\AdminlteUsers\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;

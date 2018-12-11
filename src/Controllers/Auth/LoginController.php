@@ -1,6 +1,6 @@
 <?php
 
-namespace Ozparr\AdminLogin\Controllers\Auth;
+namespace Ozparr\AdminlteUsers\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -23,7 +23,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('admin_login::auth.login');
+        return view('adminlte_users::auth.login');
     }
 
     public function logout(Request $request)
