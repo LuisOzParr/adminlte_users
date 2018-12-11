@@ -101,7 +101,11 @@ class RolesController extends Controller
      */
     public function destroy($id)
     {
+        $rol = Rol::find($id);
+        $rol->delete();
+        flash('El rol fue borrado exitosamente')->warning();
 
+        return redirect()->route('adminUsuarios.index');
     }
 
 }

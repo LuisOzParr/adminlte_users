@@ -85,7 +85,7 @@ Ejecutar en consola ```php artisan migrate``` para crear las migraciones
 A continuacion ejecutamos los seeds para crear un usuario root 
 
 ```
-php artisan db:seed --class=Ozparr\AdminLogin\DataBase\Seeds\DatabaseSeeder 
+php artisan db:seed --class="\Ozparr\AdminLogin\DataBase\Seeds\DatabaseSeeder"
 ```
 
 Crea un link simbólico de ```stograge\public``` a la carpeta ```\public```, para poder guardar las imágenes de los usuarios:
@@ -94,7 +94,7 @@ Crea un link simbólico de ```stograge\public``` a la carpeta ```\public```, par
 php artisan storage:link
 ```
 
-En consola ejecuta: ```php artisan vendor:publish``` y elige el tag ```OzParrAdmin```
+En consola ejecuta: ```php artisan vendor:publish``` y elige el tag ```OzParrAdmin``` y ```assets```
 
 Sustituir la sigiente linea de codigo del Middeleware que se encuentra en ```app\app\Http\Middleware\RedirectIfAuthenticated.php```
 

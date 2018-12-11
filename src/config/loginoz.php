@@ -5,21 +5,6 @@
  * */
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Backgroun de login
-    |--------------------------------------------------------------------------
-    |
-    | Color o imagen de fondo de login
-    |
-    */
-
-    'background' => '#d2d6de',
-    'background-img' => '',
-    'background-login-body' => '#fff',
-
-    'titleOn' => true,
-    'tutulo-img'=>'',
 
     /*
    |--------------------------------------------------------------------------
@@ -29,7 +14,7 @@ return [
    | La ruta a la que se redireccionara cunando un usuario es autenticado
    |
    */
-    'loginRedirec'=>'admin/example',
+    'loginRedirec'=>'admin/home',
 
     'loginRedirecLogout'=>'/login'
 ];

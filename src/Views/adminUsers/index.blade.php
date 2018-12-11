@@ -1,13 +1,15 @@
-@extends('admin_templeta::templetas.admin.index')
+{{-- resources/views/admin/dashboard.blade.php --}}
 
-@section('titulo', 'Usuarios')
+@extends('adminlte::page')
 
-@section('direccion')
-    Admin/<a href="">Usuarios</a>
-@endsection
+@section('title', 'Usuarios')
 
-@section('contenido')
+@section('content_header')
+    @include('flash::message')
+    <h1>Usuarios</h1>
+@stop
 
+@section('content')
     <!-- Aqui va todo el contenido -->
     <div class="row">
         <div class="col-md-6">
@@ -66,9 +68,5 @@
         </div>
         @include('admin_login::adminRoles.index')
     </div>
+@stop
 
-@endsection
-
-@section('scripts')
-    <!-- Aqui van otros scripts -->
-@endsection
