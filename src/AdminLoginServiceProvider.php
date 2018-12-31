@@ -20,7 +20,7 @@ class AdminLoginServiceProvider extends ServiceProvider
             __DIR__.'/config/loginoz.php' => config_path('loginoz.php')
         ], 'OzParrAdmin' );
         $this->publishes([
-            __DIR__.'/Views/' => base_path('vendor/adminlte_users')
+            __DIR__.'/Views/' => base_path('resources/views/vendor/adminlte_users')
         ], 'OzParrAdmin');
     }
 
