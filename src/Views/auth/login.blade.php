@@ -40,7 +40,7 @@
                     @endif
                 </div>
                 <div class="row">
-                    <div class="col-xs-8">
+                    <div class="col-xs-7">
                         <div class="checkbox icheck">
                             <label>
                                 <input type="checkbox" name="remember"> {{ trans('adminlte::adminlte.remember_me') }}
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <!-- /.col -->
-                    <div class="col-xs-4">
+                    <div class="col-xs-5">
                         <button type="submit"
                                 class="btn btn-primary btn-block btn-flat">{{ trans('adminlte::adminlte.sign_in') }}</button>
                     </div>

@@ -7,7 +7,7 @@ Instalación
 Para instalar este paquete ejecuta en la raíz del proyecto lo siguiente:
 
 ```
-composer require ozparr/admin_templeta
+composer require luisozparr/adminlte_users
 ```
 
 Agrega los nuevos provider en el array de ```providers``` que se encuentra en el archivo ```config/app.php:```
@@ -15,7 +15,7 @@ Agrega los nuevos provider en el array de ```providers``` que se encuentra en el
 ```
 'providers' => ['
     // ...
-    Ozparr\AdminlteUsers\AdminLoginServiceProvider::class,
+    Ozparr\AdminlteUsers\AdminLoginServiceProvider,
     JeroenNoten\LaravelAdminLte\ServiceProvider::class,
     Laracasts\Flash\FlashServiceProvider::class,
     // ...
@@ -91,7 +91,7 @@ php artisan storage:link
 
 En consola ejecuta: ```php artisan vendor:publish``` y elige el tag ```OzParrAdmin``` y ```assets```
 
-Sustituir la sigiente linea de codigo del Middeleware que se encuentra en ```app\app\Http\Middleware\RedirectIfAuthenticated.php```
+Sustituir la sigiente linea de codigo del Middeleware que se encuentra en ```app\Http\Middleware\RedirectIfAuthenticated.php```
 
     return redirect('\home');
 
