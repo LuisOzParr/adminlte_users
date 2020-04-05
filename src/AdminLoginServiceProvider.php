@@ -22,12 +22,15 @@ class AdminLoginServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/Views/' => base_path('resources/views/vendor/adminlte_users')
         ], 'OzParrAdmin');
+        include __DIR__.'/Models/Rol.php';
+
     }
 
     /**
      * Register the application services.
      *
      * @return void
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     public function register()
     {

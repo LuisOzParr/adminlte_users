@@ -1,12 +1,4 @@
-@extends('adminlte::master')
-
-@section('adminlte_css')
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/iCheck/square/blue.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/css/auth.css') }}">
-    @yield('css')
-@stop
-
-@section('body_class', 'login-page')
+@extends('adminlte::login')
 
 @section('body')
     <div class="login-box">
