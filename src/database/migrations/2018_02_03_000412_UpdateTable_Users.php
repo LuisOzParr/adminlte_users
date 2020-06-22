@@ -15,7 +15,7 @@ class UpdateTableUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('img')->nullable();
-            $table->unsignedInteger('rol_id');
+            $table->unsignedInteger('rol_id')->after('id');
 
             $table->foreign('rol_id')->references('id')->on('roles')->onUpdate('cascade')->onDelete('cascade');
         });

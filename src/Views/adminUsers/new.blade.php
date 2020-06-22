@@ -11,19 +11,21 @@
         <div class="col-md-6">
             <x-form method="POST" :action="route('register')" enctype="multipart/form-data">
                 <x-card title="Nuevo usuario">
-                    <div class="image">
-                        <a href="#">
-                            <img src="{{isset($user) ? url($user->img) : '' }}" alt="" style="max-height: 80px" class="img-responsive img-circle">
-                        </a>
-                    </div>
-
-                    <div class="form-group {{ $errors->has('img') ? ' has-error' : '' }}">
-                        <label>Anexar Fotos</label>
-                        <div class="file-loading">
-                            <input class="file" type="file" name="img" value="{{ old('img') }}">
+                    @if(config('loginoz.user.image'))
+                        <div class="image">
+                            <a href="#">
+                                <img src="{{isset($user) ? url($user->img) : '' }}" alt="" style="max-height: 80px" class="img-responsive img-circle">
+                            </a>
                         </div>
-                        <span class="help-block">{!! $errors->first('img') !!} </span>
-                    </div>
+
+                        <div class="form-group {{ $errors->has('img') ? ' has-error' : '' }}">
+                            <label>Anexar Fotos</label>
+                            <div class="file-loading">
+                                <input class="file" type="file" name="img" value="{{ old('img') }}">
+                            </div>
+                            <span class="help-block">{!! $errors->first('img') !!} </span>
+                        </div>
+                    @endif
 
                     <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                         <label for="name" >Nombre</label>

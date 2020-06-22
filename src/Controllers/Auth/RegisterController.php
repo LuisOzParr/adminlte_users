@@ -49,12 +49,13 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $imgIsRequired = config('loginoz.user.image') ? '|required' : '';
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'rol' => 'required|numeric',
-            'img' => 'required|image|mimes:jpeg,bmp,png|max:5000',
+            'img' => "image|mimes:jpeg,bmp,png|max:5000{$imgIsRequired}",
         ]);
     }
 
@@ -66,12 +67,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $data['img']->store('storage\img\users');
-        if(isset($data['img'])){
-            $url = explode("/", $data['img']->store('public/img/users'));
-            $url = $url[3];
-        }
-        else{
+        if (isset($data['img'])) {
+            $data['img']->store('storage\img\users');
+            if(isset($data['img'])){
+                $url = explode("/", $data['img']->store('public/img/users'));
+                $url = $url[3];
+            } else{
+                $url = null;
+            }
+        } else {
             $url = null;
         }
 
@@ -84,7 +88,6 @@ class RegisterController extends Controller
         ]);
 
         return $user;
-
     }
 
     public function register(Request $request)

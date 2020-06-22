@@ -15,16 +15,16 @@
                         <label for="name" >Nombre</label>
                         <input id="name" type="text" class="form-control" name="nombre" value="{{ old('name') }}" required autofocus>
                         <span class="help-block">
-                                    {!!  $errors->has('nombre') ? '<strong>'.$errors->first('nombre').'</strong>' : '' !!}
-                                </span>
+                            {!!  $errors->has('nombre') ? '<strong>'.$errors->first('nombre').'</strong>' : '' !!}
+                        </span>
                     </div>
 
                     <div class="form-group{{ $errors->has('nivel') ? ' has-error' : '' }}">
                         <label for="email">Nivel</label>
                         <input id="email" type="number" class="form-control" name="nivel" value="{{ old('nivel') }}" required>
                         <span class="help-block">
-                                {!!  $errors->has('nivel') ? '<strong>'.$errors->first('nivle').'</strong>' : '' !!}
-                                 </span>
+                            {!!  $errors->has('nivel') ? '<strong>'.$errors->first('nivle').'</strong>' : '' !!}
+                        </span>
                     </div>
 
                     <x-slot name="footer">

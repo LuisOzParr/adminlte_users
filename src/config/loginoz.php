@@ -16,5 +16,11 @@ return [
    */
     'loginRedirec'=>'admin/home',
 
-    'loginRedirecLogout'=>'/login'
+    'loginRedirecLogout'=>'/login',
+
+    'login_view' => 'auth.login',
+
+    'user' => [
+        'image' => false
+    ],
 ];
