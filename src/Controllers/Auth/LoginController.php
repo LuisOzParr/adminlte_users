@@ -23,7 +23,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('adminlte::auth.login');
+        return view('auth.login');
     }
 
     public function logout(Request $request)

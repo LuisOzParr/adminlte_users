@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <form class="form" method="post" action="{{route('roles.update',['role'=>$rol->id])}}">
+    <form class="form" method="post" action="{{route('roles.update',['id'=>$rol->id])}}">
         @csrf
         @method('PUT')
         <div class="row">
