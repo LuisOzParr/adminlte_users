@@ -10,8 +10,7 @@
                 <i class="fas fa-user-tag"></i>
                 Roles
             </x-slot>
-            <div class="table-responsive">
-                <table class="table table-bordered">
+            <table class="table table-bordered">
                 <tbody>
                 <tr>
                     <td>Nombre</td>
@@ -36,7 +35,6 @@
                 @endisset
                 </tbody>
             </table>
-            </div>
             @if(isset($entradas))
                 <x-slot name="footer">
                     {!! $entradas->render() !!}
