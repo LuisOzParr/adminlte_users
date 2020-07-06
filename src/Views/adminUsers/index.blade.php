@@ -23,7 +23,8 @@
                         <i class="fa fa-plus-circle"></i>  Nuevo Usuario
                     </a>
                 </x-slot>
-                <table class="table table-bordered">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
                     <tbody>
                     <tr>
                         <td>Nombre</td>
@@ -53,6 +54,7 @@
                     @endisset
                     </tbody>
                 </table>
+                </div>
             </x-card>
         </div>
         @include('adminlte_users::adminRoles.index')
