@@ -11,7 +11,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-6">
-            <x-form method="POST" :action="route('adminUsuarios.update',['adminUsuario' => $user->id])" enctype="multipart/form-data">
+            <x-form method="PUT" :action="route('adminUsuarios.update',['adminUsuario' => $user->id])" enctype="multipart/form-data">
                 <x-card>
                     <x-slot name="title">
                         Editar usuario "<b>{!! $user->name !!}</b>"
