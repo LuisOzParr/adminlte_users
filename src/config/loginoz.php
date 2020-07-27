@@ -8,10 +8,10 @@ return [
 
     /*
    |--------------------------------------------------------------------------
-   | Redireccionar una ves logeado
+   | Redirección cuando se hace el login
    |--------------------------------------------------------------------------
    |
-   | La ruta a la que se redireccionara cunando un usuario es autenticado
+   | La ruta a la que se redireccióna cunando un usuario es autenticado
    |
    */
     'loginRedirec'=>'admin/home',
