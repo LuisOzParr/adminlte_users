@@ -15,8 +15,7 @@ Agrega los nuevos provider en el array de ```providers``` que se encuentra en el
 ```
 'providers' => ['
     // ...
-    Ozparr\AdminlteUsers\AdminLoginServiceProvider,
-    JeroenNoten\LaravelAdminLte\ServiceProvider::class,
+    Ozparr\AdminlteUsers\AdminLoginServiceProvider::class,
     Laracasts\Flash\FlashServiceProvider::class,
     // ...
   ],
