@@ -23,4 +23,6 @@ return [
     'user' => [
         'image' => false
     ],
+
+    'user_model' => 'App\Models\User'
 ];

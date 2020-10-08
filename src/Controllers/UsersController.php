@@ -2,7 +2,6 @@
 
 namespace Ozparr\AdminlteUsers\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -11,10 +10,12 @@ use Ozparr\AdminlteUsers\Models\Rol;
 
 class UsersController extends Controller
 {
+    public $user;
 
     public function __construct()
     {
-        //todo attachRancho, detachRancho
+        $this->user = config('loginoz.user_model');
+        $this->user = new $this->user;
         $this->middleware('rolByLvl:1');
     }
     /**
@@ -24,7 +25,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $usuarios = User::all();
+        $usuarios = $this->user->all();
         $roles = Rol::all();
         return view('adminlte_users::adminUsers.index', compact('usuarios','roles'));
     }
@@ -62,7 +63,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
+        $user = $this->user->find($id);
         $user->name = $request->name;
         $user->email = $request->email;
         $user->rol_id = $request->rol;
@@ -107,7 +108,7 @@ class UsersController extends Controller
             return redirect()->back()->withInput()->withErrors($v->errors());
         }
 
-        $user = User::find($id);
+        $user = $this->user->find($id);
         $user->password = bcrypt($request->password);
         $user->save();
         flash('La contraseña del usuario "'.$user->name.'" ha sido modificada correctamente');
@@ -123,7 +124,7 @@ class UsersController extends Controller
     public function destroy($id)
     {
         $actualUserId = Auth::user()->id;
-        $user = User::find($id);
+        $user = $this->user->find($id);
 
         if($actualUserId == $user->id){
             flash('No puedes eliminarte a ti mismo')->warning();
@@ -142,7 +143,7 @@ class UsersController extends Controller
     }
 
     public function editPass($id){
-        $user = User::find($id);
+        $user = $this->user->find($id);
         return view('adminlte_users::adminUsers.updatePass', compact('user') );
     }
 }
