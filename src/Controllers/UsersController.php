@@ -49,7 +49,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
+        $user = $this->user->find($id);
         $roles = Rol::all();
         return view('adminlte_users::adminUsers.editar', compact('user','roles') );
     }
