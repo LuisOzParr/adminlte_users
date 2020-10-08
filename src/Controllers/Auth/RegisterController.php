@@ -2,7 +2,6 @@
 
 namespace Ozparr\AdminlteUsers\Controllers\Auth;
 
-use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -11,6 +10,9 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
+
+    private $user;
+
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -38,6 +40,8 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        $this->user = config('loginoz.user_model');
+        $this->user = new $this->user;
         $this->middleware('auth');
     }
 
@@ -79,7 +83,7 @@ class RegisterController extends Controller
             $url = null;
         }
 
-        $user = User::create([
+        $user = $this->user->create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
