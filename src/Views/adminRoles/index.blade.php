@@ -27,7 +27,7 @@
                                 <a href="{!! route('roles.edit',['role'=>$rol->id]) !!}" type="button" class="btn btn-xs btn-warning">
                                     <span class="fas fa-user-edit" aria-hidden="true"></span>
                                 </a>
-                                <a href="{!! route('roles.destroy',['id'=>$rol->id]) !!}" type="button" class="btn btn-xs btn-danger" onclick="return confirm('¿Seguro que deseas eliminar el cliente?')">
+                                <a href="{!! route('roles.destroy',['id'=>$rol->id]) !!}" type="button" class="btn btn-xs btn-danger" onclick="return confirm('¿Seguro que deseas eliminar este rol?')">
                                     <span class="fas fa-minus" aria-hidden="true"></span>
                                 </a>
                             </td>
